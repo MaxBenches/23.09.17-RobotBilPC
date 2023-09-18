@@ -95,11 +95,11 @@ def get_controller_input():
             if x_axis == 1:
                 return "x1"
             elif x_axis == -1:
-                return "x-1"
+                return "x_axis-1"
             elif y_axis == 1:
                 return "y1"
             elif y_axis == -1:
-                return "y-1"
+                return "y_axis-1"
             elif left_trig == 1:
                 return "lt"
             elif right_trig == 1:
