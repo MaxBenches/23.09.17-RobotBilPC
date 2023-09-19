@@ -11,6 +11,7 @@ controller = pygame.joystick.Joystick(0)
 # Initialise pygame
 pygame.init()
 
+
 def controller_get_input():
     while True:
         # Controller button input handling
