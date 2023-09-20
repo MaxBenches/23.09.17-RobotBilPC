@@ -12,21 +12,17 @@ controller = pygame.joystick.Joystick(0)
 pygame.init()
 
 
-def controller_get_input():
+def get_axis():
     while True:
         # Controller button input handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 break
-            if event.type == pygame.JOYAXISMOTION:
+            if event.type == pygame.JOYAXISMOTION or event.type == pygame.JOYBUTTONDOWN:
                 # Controller Analog Stick Input Handling
-                x_axis = pygame.joystick.Joystick(0).get_axis(0)
-                #y_axis = round(pygame.joystick.Joystick(0).get_axis(1) * -1)
-                left_trig = pygame.joystick.Joystick(0).get_axis(4) + 1
-                right_trig = pygame.joystick.Joystick(0).get_axis(5) + 1
-                return left_trig, right_trig, x_axis
-            """
-            if event.type == pygame.JOYBUTTONDOWN:
-                button_y = pygame.joystick.Joystick(0).get_button(3)
-                return button_y
-            """
+                x_axis_left = controller.get_axis(0)
+                left_trig = controller.get_axis(4) + 1
+                right_trig = controller.get_axis(5) + 1
+                button_x = controller.get_button(2)
+                button_y = controller.get_button(3)
+                return left_trig, right_trig, x_axis_left, button_x, button_y
