@@ -21,8 +21,8 @@ def get_axis():
             if event.type == pygame.JOYAXISMOTION or event.type == pygame.JOYBUTTONDOWN:
                 # Controller Analog Stick Input Handling
                 x_axis_left = controller.get_axis(0)
-                trig_left = controller.get_axis(4)  #Plus 1 to avoid negative values
-                trig_right = controller.get_axis(5) #Plus 1 to avoid negative values
+                trig_left = controller.get_axis(4)
+                trig_right = controller.get_axis(5)
                 button_x = controller.get_button(2)
                 button_y = controller.get_button(3)
                 button_b = controller.get_button(1)
