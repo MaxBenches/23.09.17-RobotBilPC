@@ -12,7 +12,7 @@ controller = pygame.joystick.Joystick(0)
 pygame.init()
 
 
-def get_axis():
+def get_controller_input():
     while True:
         # Controller button input handling
         for event in pygame.event.get():
@@ -26,4 +26,9 @@ def get_axis():
                 button_x = controller.get_button(2)
                 button_y = controller.get_button(3)
                 button_b = controller.get_button(1)
-                return trig_left, trig_right, x_axis_left, button_x, button_y, button_b
+                button_a = controller.get_button(0)
+                button_select = controller.get_button(6)
+                button_start = controller.get_button(7)
+                return trig_left, trig_right, x_axis_left, \
+                    button_x, button_y, button_b, \
+                    button_a, button_select, button_start
